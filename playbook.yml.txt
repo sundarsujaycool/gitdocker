@@ -1,0 +1,17 @@
+---
+-
+  name: docker orchestrate
+  hosts: localhost
+
+
+  tasks:
+   -
+      name: start docker container
+      docker_container:
+        name: web4
+        image: webserver
+        state: started
+        detach: yes
+        ports:
+         - "8095:80"
+
